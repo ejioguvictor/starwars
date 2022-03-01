@@ -1,16 +1,16 @@
 
 let tableEl = document.getElementById("table1")
-// Here we fetch some server files 
+// Here we fetch some server api files 
 fetch("https://swapi.dev/api/people")
-.then(res =>res.json())
-.then(data =>{
+  .then(res => res.json())
+  .then(data => {
     let newdata = data["results"]
     for (let i = 0; i < newdata.length; i++) {
-        tableEl.innerHTML += `  
+      tableEl.innerHTML += `  
     <div class="col-sm-4"><br>
         <div class="card">
 
-    <img src="./Images/pix${i+1}.jpeg" alt="..." class="img-responsive">
+    <img src="./Images/pix${i + 1}.jpeg" alt="..." class="img-responsive">
     <div class="card-body">
     <h5 class="card-title">${newdata[i].name}</h5>
     <p class = "card-text">War Titans</p>
@@ -43,4 +43,4 @@ fetch("https://swapi.dev/api/people")
     `
     }
 
-})
+  })
